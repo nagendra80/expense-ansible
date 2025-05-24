@@ -11,12 +11,12 @@
     ansible.builtin.service:
       name: nginx
       state: started
-      enable: yes
+      enabled: yes
 
   - name: delete html directory
     ansible.builtin.file:
       path: /usr/share/nginx/html
-      state: abesnt
+      state: absent
 
   - name: create html directory
     ansible.builtin.file:
@@ -34,7 +34,7 @@
       dest: /usr/share/nginx/html
       remote_src: yes
 
-  - name: copy expense.confi
+  - name: copy expense config
     ansible.builtin.copy:
       src: expense.conf
       dest: /etc/nginx/default.d/expense.conf
