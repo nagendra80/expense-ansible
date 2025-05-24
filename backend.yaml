@@ -53,14 +53,14 @@
     - cryptography
     - PyMySQL
 
-  - name: importing mysql data
+  - name: import mysql data
     community.mysql.mysql_db:
-    state: import
-    name: all
-    login_user: root
-    login_password: ExpenseApp@1
-    login_host: mysql.pa1.online
-    target: /app/schema/backend.sql
+      state: import
+      name: all
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: mysql.pa1.online
+      target: /app/schema/backend.sql
 
 - name: daemon reload and restart service
   ansible.builtin.systemd_service:
